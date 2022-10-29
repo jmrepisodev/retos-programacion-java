@@ -30,8 +30,21 @@ public class Reto6 {
        
     }
     
+     //segunda forma
+    public String reverseString2 (String text){
+        String textToReverse ="";
+        
+        for(int i=text.length()-1;i>=0;i--){
+            //casting implícito de Char a String
+            textToReverse+=text.charAt(i);
+        }
+        
+        return textToReverse;
+       
+    }
+    
     //otra forma
-     public String reverseString2 (String text){
+     public String reverseString3 (String text){
         String textToReverse ="";
         int count=text.length();
         

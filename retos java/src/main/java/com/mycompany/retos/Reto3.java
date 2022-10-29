@@ -20,11 +20,13 @@ public class Reto3 {
     int numero=0;
     public void serieFibonacci(){
        for(int i=0;i<50;i++){
-           if(i>1){
+           if(i>1){ 
+               //suma número última posición + número penúltima posición del array
                numero=(listaNumeros.get(listaNumeros.size()-1)) + (listaNumeros.get(listaNumeros.size()-2));
            }else{
                numero=i;
            }
+           //agrega los números al array
            listaNumeros.add(numero);  
         }
        

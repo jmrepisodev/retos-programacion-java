@@ -21,12 +21,12 @@ public class Reto2 {
     public Boolean isAnAnagrama(String palabra1, String palabra2){
       
        if(palabra1.equalsIgnoreCase(palabra2)) return false;
-       
+       //arrays de chars
        char[] arr1=palabra1.toCharArray();
        char[] arr2=palabra2.toCharArray();
        
        if(arr1.length!=arr2.length) return false;
-       
+       //ordena los arrays
        Arrays.sort(arr1);
        Arrays.sort(arr2);
        

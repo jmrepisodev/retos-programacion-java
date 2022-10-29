@@ -16,6 +16,7 @@ package com.mycompany.retos;
  * @author Jose Miguel Repiso
  */
 public class Reto4 {
+    
     public interface Area{
         public float calcularArea(float base, float altura);
     }
