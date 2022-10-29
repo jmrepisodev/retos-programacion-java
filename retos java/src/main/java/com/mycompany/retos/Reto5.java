@@ -30,21 +30,22 @@ import javax.imageio.ImageIO;
 public class Reto5 {
     
     //primera forma
-    public void saveImage(String imageUrl) throws FileNotFoundException, IOException{
+    public void saveImage(String imageUrl){
     
         try {
+            //Obtiene el recurso de la URL
             URL url=new URL(imageUrl);
             String fileName=url.getFile();
-          
+            //recorta el nombre y genera la ruta de destino
             String destName = "./images"+ fileName.substring(fileName.lastIndexOf("/"));
             System.out.println(destName);
-
+            //genera un flujo I/O de datos
             InputStream in = url.openStream();
             OutputStream out = new FileOutputStream(destName);
 
             byte[] buffer = new byte[2048];
             int length;
-
+            //Guarda el archivo de imagen
             while ((length = in.read(buffer)) != -1) {
                out.write(buffer,0,length);
             }
@@ -73,7 +74,11 @@ public class Reto5 {
             
         } catch (MalformedURLException ex){
              System.out.println("Exception occured :" + ex.getMessage());
-        };
+        }catch (FileNotFoundException ex1) {
+            System.out.println("Exception occured :" + ex1.getMessage());
+        }catch(IOException ex2){
+             System.out.println("Exception occured :" + ex2.getMessage());
+        }
     
     };
     
@@ -93,6 +98,8 @@ public class Reto5 {
             
         } catch (MalformedURLException ex) {
             System.out.println("Exception occured :" + ex.getMessage());
+        }catch (FileNotFoundException ex1) {
+            System.out.println("Exception occured :" + ex1.getMessage());
         }catch(IOException ex2){
              System.out.println("Exception occured :" + ex2.getMessage());
         }
